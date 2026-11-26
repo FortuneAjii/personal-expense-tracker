@@ -1,0 +1,247 @@
+body{
+    background-color: #0e1615;
+    margin-left: 20px;
+    font-family:"Inter", system-ui, sans-serif;;
+}
+h1{
+    margin-left: 100px;
+    font-size: 50px;
+    color: aliceblue;
+
+}
+P{
+    margin-left: 100px;
+    color: aliceblue;
+    font-style: italic;
+}
+.ieb{
+    margin-left: 150px;
+   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.income{
+    background-color: #162120;
+    color: #ececec;
+    border: solid, #3ecf9f;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+.expense{
+     background-color: #162120;
+     color:#ececec;
+     padding: 5px;
+    border: solid,#ff7aa8;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+.balance{
+     background-color: #e6efed;
+     color: #14211f;
+     padding: 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.transactionwrap{
+     background-color: #162120;
+     padding-bottom: 10px;
+     border-radius: 20px;
+     border: solid, #26362f;
+     margin: 100px;
+}
+.card-title{
+    font-size: 30px;
+    margin-left: 80px;
+    margin-top: 80px;
+    color:#ececec
+}
+.transaction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   
+  max-width: 870px;
+  margin: 50px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.expenseblock,
+.incomeblock {
+  color: #e6efed;
+  font-size: 20px;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 24px;
+}
+
+.expenseblock { background-color: #ff7aa8; }
+.incomeblock  { background-color: #3ecf9f; }
+
+.transaction label {
+  display: grid;
+  gap: 4px;
+  color: #ececec;
+}
+
+.transaction input,
+.transaction select {
+  width: 100%;
+  padding: 9px 10px;
+  background-color: #1e1e1e;
+  color: #ececec;
+  border: 1px solid #3f3f3f;
+  border-radius: 8px;
+}
+
+.transaction button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.monthlysummary {
+  max-width: 980px;
+  border: solid, ;
+  margin: 24px auto;
+  padding: 20px;
+  background-color: #162120;
+  border:  solid #26362f;
+  border-radius: 12px;
+  color: #e6efed;
+}
+
+.monthlysummary h4 {
+  font-size: 30px;
+  margin: 0 0 14px;
+}
+
+.summarytable {
+  width: 100%;                    
+  border-collapse: collapse;       
+}
+
+.summarytable th,
+.summarytable td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #3f3f3f;       
+}
+
+.summarytable th {
+  background-color: #1e2a28;
+  font-weight: 600;
+}
+
+.summarytable th:nth-child(n+2),
+.summarytable td:nth-child(n+2) {
+  text-align: right;
+}
+
+.categoryBox{
+  max-width: 980px;
+  border: solid, ;
+  margin: 24px auto;
+  padding: 20px;
+  background-color: #162120;
+  border:  solid #26362f;
+  border-radius: 12px;
+  color: #e6efed;
+}
+.categoryBox label{
+  display: flex;                    
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #e6efed;  
+}
+.categoryBox select {
+  padding: 10px;      
+  background-color: #0e1615;        
+  color: #e6efed;
+  border-style: hidden #26362f;
+  border-radius: 10px;
+  cursor: pointer;
+  color-scheme: dark;    
+}
+
+
+/* TABLETS AND LARGE PHONES (900px wide or less)*/
+
+@media (max-width: 900px) {
+  body { margin: 0 16px; }
+
+  h1, p { margin-left: 0; }
+
+  .ieb { margin-left: 0; }
+
+  .transactionwrap { margin: 40px 0; }
+
+  .card-title {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+
+  .transaction { margin: 20px auto; }
+
+  .monthlysummary,
+  .categoryBox { margin: 24px 0; }
+}
+
+/*PHONES HELD UPRIGHT (600px wide or less) */
+
+@media (max-width: 600px) {
+  h1 { font-size: 32px; }
+
+  .ieb { flex-direction: column; gap: 12px; }
+
+  .income,
+  .expense,
+  .balance {
+    width: 100%;
+    box-sizing: border-box;   
+  }
+
+  /* Add Transactions: expense block on top, income block below */
+  .transactionwrap { margin: 24px 0; }
+  .card-title { font-size: 24px; margin: 20px 16px 0; }
+  .transaction { grid-template-columns: 1fr; margin: 16px; }
+  .expenseblock,
+  .incomeblock { padding: 16px; font-size: 18px; }
+
+  /* Monthly summary: smaller text, and the table scrolls sideways if it must */
+  .monthlysummary { padding: 14px; overflow-x: auto; }
+  .monthlysummary h4 { font-size: 22px; }
+  .summarytable th,
+  .summarytable td { padding: 8px 10px; font-size: 14px; }
+
+  /* Filter box: label above a full-width dropdown */
+  .categoryBox { padding: 14px; }
+  .categoryBox h4 { font-size: 20px; }
+  .categoryBox label { flex-direction: column; align-items: stretch; }
+  .categoryBox select { width: 100%; }
+
+  /* Transaction list: the Delete button drops onto its own line */
+  .item { grid-template-columns: 1fr auto; }
+  .del { grid-column: 1 / -1; justify-self: start; }
+}
+
+/*PHONES HELD SIDEWAYS (short screens) */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  h1 { font-size: 32px; }
+  .transactionwrap { margin: 16px 0; }
+  .card-title { margin-top: 16px; font-size: 24px; }
+  .transaction { margin: 12px auto; }
+  .expenseblock,
+  .incomeblock { padding: 14px; gap: 10px; font-size: 16px; }
+}

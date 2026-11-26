@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="xptracker.css">
+</head>
+<body>
+    <h1>MyXPTracker</h1>
+    <p> The Easiest way to do your Expenses,<br>
+        Track your spendings, Save your Earnings!</p>
+ <div class="ieb">
+    <h4 class="income">Income</h4>
+    <h4 class="expense">Expenses</h4>
+    <h4 class="balance">Balance</h4>
+ </div>
+    <div class="transactionwrap">
+       <h4 class="card-title">Add Transactions 
+  
+ </h4>
+
+<div class="transaction">
+
+  <form class="expenseblock" id="expenseForm">
+    <h5>Expenses</h5>
+    <label>Description
+      <input type="text" id="expDescription" placeholder="eg. groceries" required>
+    </label>
+    <label>Amount
+      <input type="number" id="expAmount" min="0.01" step="0.01" placeholder="00.00" required>
+    </label>
+    <label>Date
+      <input type="date" id="expDate" required>
+    </label>
+    <label>Category
+      <select id="expCategory">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Utility</option>
+        <option>Shopping</option>
+        <option>Subscriptions</option>
+      </select>
+    </label>
+    <button type="submit">Add expense</button>
+  </form>
+
+  <form class="incomeblock" id="incomeForm">
+    <h5>Income</h5>
+    <label>Description
+      <input type="text" id="incDescription" placeholder=" eg. Wardrobe Allowance" required>
+    </label>
+    <label>Amount
+      <input type="number" id="incAmount" min="0.01" step="0.01" placeholder="00.00" required>
+    </label>
+    <label>Date
+      <input type="date" id="incDate" required>
+    </label>
+    <label>Category
+      <select id="incCategory">
+        <option>Salary</option>
+        <option>Solo business</option>
+        <option>Corporate contributions</option>
+      </select>
+    </label>
+    <button type="submit">Add income</button>
+  </form>
+
+</div>
+    </div>
+ 
+   
+    <div class="monthlysummary">
+  <h4>Monthly Summary</h4>
+
+  <table class="summarytable">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Income</th>
+        <th>Expenses</th>
+        
+      </tr>
+    </thead>
+    <tbody id="monthlyBody">
+    </tbody>
+  </table>
+</div>
+    
+   <div class="categoryBox">
+     <h4>Transaction filtered by Category</h4>
+      <label>Filter by category
+      <select id="filterCategory">
+        <option>All categories</option>
+      </select>
+    </label>
+    <ul id="transactionList"></ul>
+   </div>
+    
+    <script src="xptracker.js"></script>
+</body>
+</html>
